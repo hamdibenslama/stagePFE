@@ -1,0 +1,50 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "/WEB-INF/lib/xhtml1-transitional.dtd">
+<html xmlns:sec="http://www.springframework.org/security/tags"
+	xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core">
+<head>
+<title>Authentification</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+</head>
+<body>
+
+
+	<div align="center">
+
+
+		<h:form id="LoginForm">
+			<fieldset
+				style="border-color: #FFFFFF; border-style: solid; border-width: 2px; padding: 5px; width: 280px;">
+				<h:outputText value="Authentification " styleClass="xteDetailLabel" />
+			</fieldset>
+
+			<table cellspacing="0" style="width: 265px;">
+				<tr>
+					<td class="label_name"><label for="j_username"> <h:outputText
+								value="Nom d'utilisateur : " styleClass="xteDetailLabel" />
+					</label></td>
+					<td><h:inputText id="j_username" required="true"
+							requiredMessage="* Vous devez saisir votre login" /></td>
+				</tr>
+				<tr>
+					<td class="label_name"><label for="j_password"> <h:outputText
+								value="Mot de passe : " styleClass="xteDetailLabel" /><br />
+					</label></td>
+
+					<td><h:inputSecret id="j_password" required="true"
+							requiredMessage="* Vous devez saisir votre mot de passe" /></td>
+				</tr>
+			</table>
+
+			<div align="right">
+				<h:commandButton type="submit" id="login"
+					action="#{loginBean.check}" value="Se connecter" />
+			</div>
+		</h:form>
+
+
+	</div>
+
+</body>
+</html>
